@@ -19,4 +19,15 @@ public class ParkingBoy {
         }
         return isParkable;
     }
+
+    public boolean isAbleToPickUp(ParkingTicket parkingTicket) {
+        boolean isAbleToPickUp = false;
+        for (ParkingLot parkingLot : this.parkingLots) {
+            isAbleToPickUp = parkingLot.isAbleToPickUp(parkingTicket);
+            if (isAbleToPickUp) {
+                break;
+            }
+        }
+        return isAbleToPickUp;
+    }
 }
