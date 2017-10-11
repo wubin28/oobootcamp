@@ -18,7 +18,7 @@ public class ParkingLotTest {
     public void the_parking_lot_cannot_have_the_driver_park_his_car_if_it_is_full() {
         ParkingLot parkingLot = new ParkingLot(10);
         for (int i = 0; i < 10; i++) {
-            parkingLot.openEntranceDoor();
+            parkingLot.park("JA" + i);
         }
 
         assertFalse(parkingLot.isParkable());

@@ -15,11 +15,7 @@ public class ParkingLot {
     }
 
     public boolean isParkable() {
-        return occupiedParkingSpaces < allParkingSapces;
-    }
-
-    public void openEntranceDoor() {
-        this.occupiedParkingSpaces++;
+        return this.plates.size() < allParkingSapces;
     }
 
     public ParkingTicket park(String plateNumber) {
@@ -28,6 +24,6 @@ public class ParkingLot {
     }
 
     public boolean isAbleToPickUp(ParkingTicket parkingTicket) {
-        return plates.contains(parkingTicket.getPlateNumber());
+        return this.plates.contains(parkingTicket.getPlateNumber());
     }
 }
