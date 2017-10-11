@@ -67,5 +67,24 @@ public class ParkingBoyTest {
         assertTrue(parkingBoy.isAbleToPickUp(parkingTicket));
     }
 
-    // The parking boy can pick up the car from the second parking lot
+    @Test
+    public void the_parking_boy_can_pick_up_the_car_from_the_second_parking_lot() {
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        ParkingLot parkingLot = new ParkingLot(10);
+        parkingLots.add(parkingLot);
+        ParkingLot anotherParkingLot = new ParkingLot(10);
+        parkingLots.add(anotherParkingLot);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+
+        for (int i = 0; i < 10; i++) {
+            parkingLot.park("JA" + i);
+        }
+
+        for (int i = 0; i < 7; i++) {
+            anotherParkingLot.park("JB" + i);
+        }
+        ParkingTicket parkingTicket = anotherParkingLot.park("JA12345");
+
+        assertTrue(parkingBoy.isAbleToPickUp(parkingTicket));
+    }
 }
