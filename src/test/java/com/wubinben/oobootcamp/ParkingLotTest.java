@@ -2,6 +2,7 @@ package com.wubinben.oobootcamp;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ParkingLotTest {
@@ -13,6 +14,14 @@ public class ParkingLotTest {
         assertTrue(parkingLot.isParkable());
     }
 
-    // The parking lot cannot have the driver park his car if it is full
+    @Test
+    public void the_parking_lot_cannot_have_the_driver_park_his_car_if_it_is_full() {
+        ParkingLot parkingLot = new ParkingLot(10);
+        for (int i = 0; i < 10; i++) {
+            parkingLot.openEntranceDoor();
+        }
+        assertFalse(parkingLot.isParkable());
+    }
+
     // The parking lot can have the driver pick up his car if he returns the parking ticket
 }

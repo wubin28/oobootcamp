@@ -6,9 +6,14 @@ public class ParkingLot {
 
     public ParkingLot(int allParkingSpaces) {
         this.allParkingSapces = allParkingSpaces;
+        this.occupiedParkingSpaces = 0;
     }
 
     public boolean isParkable() {
         return occupiedParkingSpaces < allParkingSapces;
+    }
+
+    public void openEntranceDoor() {
+        this.occupiedParkingSpaces++;
     }
 }
