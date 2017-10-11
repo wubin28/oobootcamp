@@ -20,8 +20,16 @@ public class ParkingLotTest {
         for (int i = 0; i < 10; i++) {
             parkingLot.openEntranceDoor();
         }
+
         assertFalse(parkingLot.isParkable());
     }
 
-    // The parking lot can have the driver pick up his car if he returns the parking ticket
+    @Test
+    public void the_parking_lot_can_have_the_driver_pick_up_his_car_if_he_returns_the_parking_ticket() {
+        ParkingLot parkingLot = new ParkingLot(10);
+        ParkingTicket parkingTicket = parkingLot.park("JA12345");
+
+        assertTrue(parkingLot.isAbleToPickUp(parkingTicket));
+    }
+
 }
